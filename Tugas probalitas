@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    string nama = "MIS MAYUHA SUCI";
+    string nim = "5520125013";
+
+    double nilaiTugas, nilaiUTS, nilaiUAS;
+    double total;
+    string grade;
+
+    cout << "======================================" << endl;
+    cout << "        PROGRAM NILAI MAHASISWA      " << endl;
+    cout << "======================================" << endl;
+
+    cout << "Nama : " << nama << endl;
+    cout << "NIM  : " << nim << endl;
+
+    cout << "\nMasukkan nilai:" << endl;
+
+    cout << "Tugas : ";
+    cin >> nilaiTugas;
+
+    cout << "UTS   : ";
+    cin >> nilaiUTS;
+
+    cout << "UAS   : ";
+    cin >> nilaiUAS;
+
+    // Perhitungan nilai
+    total = (nilaiTugas * 30 / 100) +
+            (nilaiUTS * 30 / 100) +
+            (nilaiUAS * 40 / 100);
+
+    // Menentukan grade
+    if (total >= 85)
+        grade = "A";
+    else if (total >= 75)
+        grade = "B";
+    else if (total >= 65)
+        grade = "C";
+    else if (total >= 50)
+        grade = "D";
+    else
+        grade = "E";
+
+    cout << "\n\n========== HASIL ==========" << endl;
+    cout << "Nama       : " << nama << endl;
+    cout << "NIM        : " << nim << endl;
+    cout << "Nilai Tugas: " << nilaiTugas << endl;
+    cout << "Nilai UTS  : " << nilaiUTS << endl;
+    cout << "Nilai UAS  : " << nilaiUAS << endl;
+
+    cout << fixed << setprecision(2);
+    cout << "Nilai Akhir: " << total << endl;
+    cout << "Grade      : " << grade << endl;
+
+    cout << "============================" << endl;
+
+    return 0;
+}
